@@ -1,2 +1,12 @@
 <h1>{{ counter }}</h1>
 <button class="btn btn-primary btn-lg" (click)="addOne()">Add 1</button>
+
+<p>Add items to the list</p>
+<input type="text" #name>
+<input type="text" #description>
+<button class="btn btn-warning btn-lg" (click)="addItem(name, description)">Add Item</button>
+
+<p>Here are the items:</p>
+<ul>
+	<li *ng-for="#item of list">{{ item.name}} and {{item.description}}</li>
+</ul>
