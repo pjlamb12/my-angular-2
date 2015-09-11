@@ -1,7 +1,9 @@
 import {Component, View, CORE_DIRECTIVES} from 'angular2/angular2';
+import {MyService} from '../../services/myService';
 
 @Component({
-	selector: 'my-component'
+	selector: 'my-component',
+	bindings: [MyService]
 })
 @View({
 	templateUrl: './components/my-component/my-component.html',
@@ -12,6 +14,10 @@ export class MyComponent{
 	counter : number = 0;
 	list : Array = [];
 	item : Object = {name: '', description: ''};
+
+	constructor(myService:MyService) {
+		// console.log(myService.getServerData());
+	}
 
 	addOne() {
 		this.counter += 1;
