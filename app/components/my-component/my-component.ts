@@ -12,11 +12,12 @@ import {MyService} from '../../services/myService';
 
 export class MyComponent{
 	counter : number = 0;
-	list : Array = [];
+	list : any = [];
 	item : Object = {name: '', description: ''};
+	serverData :any;
 
 	constructor(myService:MyService) {
-		// console.log(myService.getServerData());
+		this.serverData = myService.getServiceData();
 	}
 
 	addOne() {

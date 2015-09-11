@@ -2,11 +2,23 @@
 <button class="btn btn-primary btn-lg" (click)="addOne()">Add 1</button>
 
 <p>Add items to the list</p>
-<input type="text" #name>
-<input type="text" #description>
-<button class="btn btn-warning btn-lg" (click)="addItem(name, description)">Add Item</button>
+<div>
+	<div class="form-group">
+		<label for="">Item Name</label>
+		<input type="text" #name class="form-control" placeholder="Item name">
+	</div>
+	<div class="form-group">
+		<label for="">Item Description</label>
+		<input type="text" #description class="form-control" placeholder="Item description">
+	</div>
+	<div class="form-group">
+		<button class="btn btn-warning" (click)="addItem(name, description)">Add Item</button>
+	</div>
+</div>
 
 <p>Here are the items:</p>
 <ul>
 	<li *ng-for="#item of list">{{ item.name}} and {{item.description}}</li>
 </ul>
+
+<h1>{{serverData}}</h1>
